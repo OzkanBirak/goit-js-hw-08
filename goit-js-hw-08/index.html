@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GOIT JS HW-08 — Görüntü Galerisi</title>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modern-normalize/modern-normalize.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/basiclightbox@5/dist/basicLightbox.min.css" />
+    <style>
+        :root { --gap: 24px; --card-min-width: 320px; }
+        * { box-sizing: border-box; }
+        body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"; background: #0f172a; color: #e2e8f0; margin: 0; padding: 32px; }
+        h1 { font-weight: 700; font-size: 24px; margin: 0 0 24px; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .gallery { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(var(--card-min-width), 1fr)); gap: var(--gap); }
+        .gallery-item { border-radius: 12px; overflow: hidden; background: #111827; box-shadow: 0 2px 16px rgba(0,0,0,.35); }
+        .gallery-link { display: block; text-decoration: none; color: inherit; }
+        .gallery-image { display: block; width: 100%; height: 240px; object-fit: cover; transition: transform .2s ease, filter .2s ease; }
+        .gallery-link:focus-visible .gallery-image,
+        .gallery-link:hover .gallery-image { transform: scale(1.02); filter: saturate(1.1); }
+        .basicLightbox--visible .basicLightbox__placeholder img { max-width: 100vw; max-height: 100vh; }
+    </style>
+    <!-- basicLightbox CSS is linked above; JS is loaded before our script below -->
+</head>
+<body>
+    <div class="container">
+        <h1>Görüntü Galerisi</h1>
+        <ul class="gallery"></ul>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/basiclightbox@5/dist/basicLightbox.min.js"></script>
+    <script src="./gallery.js" defer></script>
+</body>
+</html>
+
+
